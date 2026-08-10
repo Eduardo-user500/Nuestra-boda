@@ -48,7 +48,7 @@
         }
 
         .heart-image {
-            width: 100px; /* Puedes ajustar el tamaño aquí (ej. 80px, 120px) */
+            width: 100px; 
             height: auto;
             cursor: pointer;
             user-select: none;
@@ -344,6 +344,39 @@
         .gallery-item img:hover {
             transform: scale(1.05);
         }
+
+        /* ----------------------------------
+           NUEVOS ESTILOS: CÓDIGO DE VESTIMENTA (CON TU IMAGEN)
+        ---------------------------------- */
+        .dresscode-section {
+            margin-top: 35px;
+            border-top: 1px double #b5995e;
+            padding-top: 25px;
+        }
+
+        .dresscode-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 38px;
+            color: #96793b;
+            margin: 0 0 10px 0;
+        }
+
+        .dresscode-img {
+            width: 130px;       /* Controla el tamaño de tu imagen */
+            height: auto;       /* Evita que se deforme */
+            margin: 0 auto 15px auto;
+            display: block;
+        }
+
+        .dresscode-type {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #4a4a4a;
+            font-weight: 600;
+            margin: 0;
+        }
     </style>
 </head>
 <body>
@@ -444,6 +477,7 @@
                 </div>
             </div>
 
+            <!-- SECCIÓN DE GALERÍA -->
             <div class="gallery-section">
                 <h2 class="gallery-title">Galería</h2>
                 <div class="gallery-grid">
@@ -460,6 +494,13 @@
                         <img src="foto4.jpg" alt="Boda Jocelyn y Eduardo 4">
                     </div>
                 </div>
+            </div>
+
+            <!-- NUEVA SECCIÓN: CÓDIGO DE VESTIMENTA CON TU IMAGEN -->
+            <div class="dresscode-section">
+                <h2 class="dresscode-title">Vestimenta</h2>
+                <img src="vestimenta.png" alt="Código de Vestimenta" class="dresscode-img">
+                <p class="dresscode-type">Formal</p>
             </div>
 
         </div>
