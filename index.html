@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
         body {
@@ -123,15 +125,51 @@
             z-index: 10;
             pointer-events: auto;
         }
-
+        
+        /* El contenedor padre debe ser relativo */
         .quote {
-            font-size: 14px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            line-height: 1.7;
-            color: #7d6e50;
-            margin-bottom: 30px;
-            font-weight: 600;
+            position: relative;
+            text-align: center;
+            padding: 20px 40px; /* Da espacio a los lados para que el texto no toque las flores */
+            margin-bottom: 20px;
+        }
+
+        .quote-text {
+            font-family: 'Cinzel', 'Playfair Display', Georgia, serif; /* Mismo estilo de fuente del cuerpo */
+            font-size: 16px;
+            font-style: italic;
+            color: #4a5568;
+            margin: 5px 0;
+            line-height: 1.4;
+        }
+
+        /* Estilo base para ambas flores en las esquinas */
+        .flower-corner {
+            position: absolute;
+            top: 0;
+            width: 90px; /* Ajusta el tamaño que mejor se adapte a tu tarjeta */
+            height: auto;
+            pointer-events: none; /* Evita que interfieran con selecciones de texto */
+        }
+
+        /* Flor de la esquina izquierda */
+        .left-flower {
+            left: 0;
+        }
+
+        /* Flor de la esquina derecha */
+        .right-flower {
+            right: 0;
+        }
+
+        /* Opcional: Ajuste para que en pantallas móviles no tapen el texto */
+        @media (max-width: 480px) {
+            .flower-corner {
+                width: 65px;
+            }
+            .quote {
+                padding: 10px 20px;
+            }
         }
 
         .names-container {
@@ -139,19 +177,41 @@
         }
 
         .groom-bride {
-            font-family: 'Great Vibes', cursive;
-            font-size: 58px;
-            color: #96793b;
+            font-family: 'Alex Brush', cursive;
+            font-size: 48px;
+            font-weight: 300;
             margin: 0;
-            line-height: 0.9;
+            line-height: 1.1;
+            padding-top: 1px;
+            
+            /* Efecto Dorado Metálico */
+            background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            
+            /* Sombra suave para dar relieve visual */
+            filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.15));
         }
 
         .ampersand {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: 28px;
-            color: #b5995e;
-            margin: 5px 0;
+            display: block;
+            font-family: 'Alex Brush', cursive;
+            font-size: 27px; /* Un poco más pequeño que los nombres */
+            
+            /* Márgenes negativos para juntar los nombres sin cortar el texto */
+            margin-top: -10px;
+            margin-bottom: -10px;
+            
+            background: linear-gradient(135deg, #a37218 0%, #fef1aa 25%, #da9e31 50%, #fff7cc 75%, #8a580b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            
+            -webkit-text-stroke: 0.3px #8a580b;
+            filter: drop-shadow(0px 1px 2px rgba(138, 88, 11, 0.3));
         }
 
         .we-marry {
@@ -346,7 +406,7 @@
         }
 
         /* ----------------------------------
-           NUEVOS ESTILOS: CÓDIGO DE VESTIMENTA (CON TU IMAGEN)
+           CÓDIGO DE VESTIMENTA
         ---------------------------------- */
         .dresscode-section {
             margin-top: 35px;
@@ -362,8 +422,8 @@
         }
 
         .dresscode-img {
-            width: 130px;       /* Controla el tamaño de tu imagen */
-            height: auto;       /* Evita que se deforme */
+            width: 130px;
+            height: auto;
             margin: 0 auto 15px auto;
             display: block;
         }
@@ -377,6 +437,111 @@
             font-weight: 600;
             margin: 0;
         }
+
+        .reservation-section {
+            text-align: center;
+            margin-top: 35px;
+            border-top: 1px double #b5995e;
+            padding-top: 25px;
+        }
+
+        .section-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 38px;
+            color: #96793b;
+            margin: 0 0 10px 0;
+        }
+
+        .tickets-text {
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin: 25px 0 15px 0;
+            line-height: 1.6;
+            color: #4a4a4a;
+        }
+
+        .tickets-number {
+            font-weight: bold;
+            font-size: 18px;
+            color: #da9e31;
+            border-bottom: 1px solid #da9e31;
+            padding: 0 6px;
+        }
+
+        .confirmar-asistencia {
+            text-align: center;
+            margin-top: 35px;
+            border-top: 1px double #b5995e;
+            padding-top: 25px;
+        }
+
+        .asistencia-tittle {
+            font-family: 'Great Vibes', cursive;
+            font-size: 38px;
+            color: #96793b;
+            margin: 0 0 10px 0;
+        }
+
+        /* ESTILO DEL BOTÓN DE CONFIRMACIÓN */
+        .btn-confirmar {
+            display: inline-block;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+            color: #4a3b10;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 1px solid #b5995e;
+            border-radius: 4px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .btn-confirmar:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.18);
+            color: #000000;
+        }
+
+        /* ----------------------------------
+           SECCIÓN DE CIERRE / AGRADECIMIENTO
+        ---------------------------------- */
+        .final-closing-section {
+            margin-top: 35px;
+            border-top: 1px double #b5995e;
+            padding-top: 25px;
+            text-align: center;
+        }
+
+        .final-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 15px;
+            letter-spacing: 1px;
+            color: #5a5a5a;
+            margin: 0 0 10px 0;
+            line-height: 1.4;
+        }
+
+        .thank-you-text {
+            font-family: 'Alex Brush', cursive;
+            font-size: 31px;
+            margin: 5px 0 0 0;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #362a12 0%, #dad492 25%, #503e17 50%, #d3ca64 75%, #3b290a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.15));
+        }
+
     </style>
 </head>
 <body>
@@ -398,10 +563,16 @@
 
         <div class="content">
             <div class="quote">
-                Amor no es mirarse<br>
-                el uno al otro,<br>
-                es mirar juntos en la<br>
-                misma dirección
+                <img src="flor_izqui.png" alt="Flor izquierda" class="flower-corner left-flower">
+        
+                <p class="quote-text">
+                    Amor no es mirarse<br>
+                    el uno al otro,<br>
+                    es mirar juntos en la<br>
+                    misma dirección
+                </p>
+        
+                <img src="flor_dere.png" alt="Flor derecha" class="flower-corner right-flower">
             </div>
 
             <div class="names-container">
@@ -444,7 +615,7 @@
             <div class="location-title">
                 <a href="https://www.google.com/maps/place/Parroquia+de+Nuestra+Se%C3%B1ora+de+la+Candelaria+de+Ozumbilla/@19.6775816,-98.997596,19.56z/data=!4m15!1m8!3m7!1s0x85d1ed7612e2280d:0xd3fc4c635fdaf190!2sParroquia+de+Santa+Maria+Ozumbilla,+Puebla+1,+Ozumbilla,+55760+Tec%C3%A1mac+de+Felipe+Villanueva,+M%C3%A9x.!3b1!8m2!3d19.6774423!4d-98.9971729!16s%2Fg%2F11jss_lyw6!3m5!1s0x85d1ed766d23b607:0xeddbb0d35fe4e47b!8m2!3d19.6776575!4d-98.9970797!16s%2Fg%2F1tdcxfd6?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="location-link">Parroquia de Nuestra Señora de la Candelaria de Ozumbilla</a>
             </div>
-            <div class="time-text"><strong>Hora: 6:30 PM</strong></div>
+            <div class="time-text"><strong>Hora: 4:30 PM</strong></div>
 
             <div class="location-title">
                 <a href="https://www.google.com/maps/place/Sal%C3%B3n+y+Jard%C3%ADn+de+Eventos+Sociales+Princess/@19.6689373,-99.0444994,14z/data=!4m11!1m3!2m2!1ssalon+princess!6e1!3m6!1s0x85d1ed86ba706515:0xf2a2641c6d6f6ca1!8m2!3d19.6689373!4d-99.0084505!15sCg5zYWxvbiBwcmluY2Vzc1oQIg5zYWxvbiBwcmluY2Vzc5IBFmZ1bmN0aW9uX3Jvb21fZmFjaWxpdHmaAURDaTlEUVVsUlFVTnZaRU5vZEhsalJqbHZUMnhTYmxKVVkzZGhWRlpRVW10V1ExVklVbE5XZWtaSFdtNWtTMlZIWXhBQuABAPoBBAgAEDk!16s%2Fg%2F11b6bfgvsd?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="location-link">Salón de eventos Princess</a>
@@ -496,13 +667,38 @@
                 </div>
             </div>
 
-            <!-- NUEVA SECCIÓN: CÓDIGO DE VESTIMENTA CON TU IMAGEN -->
+            <!-- SECCIÓN CÓDIGO DE VESTIMENTA -->
             <div class="dresscode-section">
                 <h2 class="dresscode-title">Vestimenta</h2>
                 <img src="vestimenta.png" alt="Código de Vestimenta" class="dresscode-img">
                 <p class="dresscode-type">Formal</p>
             </div>
 
+            <!-- SECCIÓN RESERVACIÓN -->
+            <div class="reservation-section">
+                <h2 class="section-title">Reservación</h2>
+                <p class="tickets-text">Hemos reservado <br>
+                    <span class="tickets-number">N</span> <br>
+                    lugar(es) en su honor
+                </p>
+            </div>
+
+            <!-- SECCIÓN CONFIRME SU ASISTENCIA -->
+            <div class="confirmar-asistencia">
+                <h2 class="asistencia-tittle">Confirmar asistencia</h2>
+                <a href="TU_ENLACE_DE_FORMS_AQUI" target="_blank" rel="noopener noreferrer" class="btn-confirmar">
+                    CONFIRMAR AQUÍ
+                </a>
+            </div>
+
+            <!-- SECCIÓN DE AGRADECIMIENTO Y FRASE FINAL -->
+            <div class="final-closing-section">
+                <p class="final-quote">Los mejores momentos de la vida <br>
+                                        deben ser compartidos
+                </p>
+                <h2 class="thank-you-text">Gracias por <br>
+                                           acompañarnos</h2>
+            </div>
         </div>
     </div>
 
